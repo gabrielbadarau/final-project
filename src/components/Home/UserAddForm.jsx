@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import {addPerson} from '../../redux/actions/list';
 
 class UserAddForm extends React.Component {
     constructor(props){
@@ -18,7 +20,8 @@ class UserAddForm extends React.Component {
         const year=today.getFullYear().toString();
         const month=today.getMonth()>9 ? (today.getMonth()+1).toString() : "0".concat((today.getMonth()+1).toString());
         const day=today.getDate().toString();
-        this.setState({todayDate:year.concat("-",month,"-",day)})
+        const todayDate=year.concat("-",month,"-",day);
+        this.setState({todayDate,dateOfEmployment:todayDate})
     }
 
     updateName(event){
@@ -41,10 +44,20 @@ class UserAddForm extends React.Component {
         this.setState({dateOfEmployment:event.target.value})
     }
 
+    submitAddPerson(event){
+        event.preventDefault();
+        this.props.addPerson({
+            name: this.state.name,
+            surname:this.state.surname,
+            job:this.state.job,
+            salary:this.state.salary,
+            dateOfEmployment:this.state.dateOfEmployment
+        })
+    }
+
     render() {
-        console.log(this.state)
         return (
-            <form>
+            <form onSubmit={(event)=>this.submitAddPerson(event)}>
                 <label htmlFor="name">Nume:</label>
                 <input
                     type="text"
@@ -55,7 +68,7 @@ class UserAddForm extends React.Component {
                 />
                 <label htmlFor="surname">Prenume:</label>
                 <input
-                    type="email"
+                    type="text"
                     id="surname"
                     onChange={(event) => this.updateSurname(event)}
                     required
@@ -91,4 +104,10 @@ class UserAddForm extends React.Component {
     }
 }
 
-export default UserAddForm
+function mapDispatchToProps(dispatch){
+    return {
+        addPerson:(person)=>dispatch(addPerson(person))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(UserAddForm)
