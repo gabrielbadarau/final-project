@@ -1,13 +1,14 @@
 import React from 'react'
+import Buttons from '../components/People/Buttons'
+import PeopleList from '../components/People/PeopleList'
 
-class People extends React.Component {
-    render() {
-        return (
-            <div>
-                <p>Hello</p>
-            </div>
-        )
-    }
+function People() {
+    return (
+        <div>
+            <Buttons></Buttons>
+            <PeopleList></PeopleList>
+        </div>
+    )
 }
 
-export default People
+export default People;

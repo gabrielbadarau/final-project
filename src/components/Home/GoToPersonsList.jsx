@@ -5,7 +5,7 @@ function GoToPersonsList() {
     return (
         <div>
             <button>
-                <Link to="people">List de persoane</Link>
+                <Link to="/people">List de persoane</Link>
             </button>
         </div>
     )
