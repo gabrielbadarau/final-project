@@ -1,6 +1,6 @@
 import React from 'react'
-import UserAddForm from '../PersonsList.jsx/UserAddForm'
-import GoToPersonsList from '../PersonsList.jsx/GoToPersonsList'
+import UserAddForm from '../components/Home/UserAddForm'
+// import GoToPersonsList from '../components/Home/GoToPersonsList'
 
 
 class Home extends React.Component {
@@ -8,7 +8,7 @@ class Home extends React.Component {
         return (
             <div>
                 <UserAddForm />
-                <GoToPersonsList />
+                {/* <GoToPersonsList /> */}
             </div>
         )
     }
