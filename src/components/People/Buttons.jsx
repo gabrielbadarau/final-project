@@ -64,6 +64,11 @@ class Buttons extends React.Component {
         }
     }
 
+    componentWillUnmount(){
+        this.props.changeSorter({nameSort:false,salarySort:false})
+        this.props.changeFilter({firstFilter:false,secondFilter:false,thirdFilter:false})
+    }
+
     render() {
         return (
             <div>
