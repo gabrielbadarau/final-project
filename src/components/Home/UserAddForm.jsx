@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import {addPerson} from '../../redux/actions/list';
+import './UserAddForm.css'
 
 class UserAddForm extends React.Component {
     constructor(props){
@@ -19,7 +20,7 @@ class UserAddForm extends React.Component {
         const today=new Date();
         const year=today.getFullYear().toString();
         const month=today.getMonth()>9 ? (today.getMonth()+1).toString() : "0".concat((today.getMonth()+1).toString());
-        const day=today.getDate().toString();
+        const day=today.getDate()>9 ? today.getDate().toString() : "0".concat(today.getDate().toString())
         return year.concat("-",month,"-",day);
     }
 
@@ -67,9 +68,13 @@ class UserAddForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={(event)=>this.submitAddPerson(event)}>
+            <form 
+                className="d-flex flex-column flex-nowrap" 
+                onSubmit={(event)=>this.submitAddPerson(event)}
+            >
                 <label htmlFor="name">Nume:</label>
                 <input
+                    className='rounded-pill'
                     type="text"
                     id="name"
                     onChange={(event) => this.updateName(event)}
@@ -79,6 +84,7 @@ class UserAddForm extends React.Component {
                 />
                 <label htmlFor="surname">Prenume:</label>
                 <input
+                    className='rounded-pill'
                     type="text"
                     id="surname"
                     onChange={(event) => this.updateSurname(event)}
@@ -88,6 +94,7 @@ class UserAddForm extends React.Component {
                 />
                 <label htmlFor="job">Meserie:</label>
                 <input
+                    className='rounded-pill'
                     type="text"
                     id="job"
                     onChange={(event) => this.updateJob(event)}
@@ -97,6 +104,7 @@ class UserAddForm extends React.Component {
                 />
                 <label htmlFor="salary">Salariu:</label>
                 <input
+                    className='rounded-pill'
                     type="number"
                     id="salary"
                     onChange={(event) => this.updateSalary(event)}
@@ -106,13 +114,14 @@ class UserAddForm extends React.Component {
                 />
                 <label htmlFor="dateOfEmployment">Data angajării:</label>
                 <input
+                    className='rounded-pill'
                     type="date"
                     id="dateOfEmployment"
                     onChange={(event) => this.updateDateOfEmployment(event)}
                     required
                     value={this.state.dateOfEmployment}
                 />
-                <input type="submit" value="Adaugă persoană" />
+                <input className='add-person rounded-pill my-3' type="submit" value="Adaugă persoana" />
             </form>
         )
     }

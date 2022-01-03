@@ -72,46 +72,56 @@ class Buttons extends React.Component {
     render() {
         return (
             <div>
-                <div>
+                <div className='d-flex flex-column'>
                     <p>Sortează după:</p>
-                    <input 
-                        onChange={(event)=>this.updateNameSort(event)}
-                        type="checkbox" 
-                        id="nameSort" 
-                        checked={this.state.sortCheck1}
-                    />
-                    <label htmlFor="nameSort">nume</label>
-                    <input
-                        onChange={(event)=>this.updateSalarySort(event)}
-                        type="checkbox" 
-                        id="salarySort" 
-                        checked={this.state.sortCheck2}
-                    />
-                    <label htmlFor="salarySort">salariu</label>
+                    <div>
+                        <input 
+                            onChange={(event)=>this.updateNameSort(event)}
+                            type="checkbox" 
+                            id="nameSort" 
+                            checked={this.state.sortCheck1}
+                        />
+                        <label htmlFor="nameSort">nume</label>
+                    </div>
+                    <div>
+                        <input
+                            onChange={(event)=>this.updateSalarySort(event)}
+                            type="checkbox" 
+                            id="salarySort" 
+                            checked={this.state.sortCheck2}
+                        />
+                        <label htmlFor="salarySort">salariu</label>
+                    </div>
                 </div>
-                <div>
+                <div className='mt-2 d-flex flex-column'>
                     <p>Filtrează după salariu:</p>
-                    <input 
-                        onChange={(event)=>this.updateFirstFilter(event)}
-                        type="checkbox" 
-                        id="1"
-                        checked={this.state.filterCheck1}
-                    />
-                    <label htmlFor="1">sub 2500</label>
-                    <input 
-                        onChange={(event)=>this.updateSecondFilter(event)}
-                        type="checkbox" 
-                        id="2"
-                        checked={this.state.filterCheck2}
-                    />
-                    <label htmlFor="2">2500-4000</label>
-                    <input 
-                        onChange={(event)=>this.updateThirdFilter(event)}
-                        type="checkbox" 
-                        id="3"
-                        checked={this.state.filterCheck3}
-                    />
-                    <label htmlFor="3">peste 4000</label>
+                    <div>
+                        <input 
+                            onChange={(event)=>this.updateFirstFilter(event)}
+                            type="checkbox" 
+                            id="1"
+                            checked={this.state.filterCheck1}
+                        />
+                        <label htmlFor="1">sub 2500</label>
+                    </div>
+                    <div>
+                        <input 
+                            onChange={(event)=>this.updateSecondFilter(event)}
+                            type="checkbox" 
+                            id="2"
+                            checked={this.state.filterCheck2}
+                        />
+                        <label htmlFor="2">2500-4000</label>
+                    </div>
+                    <div>
+                        <input 
+                            onChange={(event)=>this.updateThirdFilter(event)}
+                            type="checkbox" 
+                            id="3"
+                            checked={this.state.filterCheck3}
+                        />
+                        <label htmlFor="3">peste 4000</label>
+                    </div>
                 </div>
             </div>
         )

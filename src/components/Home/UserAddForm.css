@@ -1,0 +1,15 @@
+.add-person:active{
+    transform: scale(0.93);
+}
+.add-person:hover{
+    filter: brightness(130%);
+}
+
+.add-person{
+    background-color: #25ac52;
+	color: white;
+	border: none;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+}

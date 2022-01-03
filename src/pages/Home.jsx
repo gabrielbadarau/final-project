@@ -4,7 +4,7 @@ import GoToPersonsList from '../components/Home/GoToPersonsList'
 
 function Home() {
     return (
-        <div>
+        <div className='container-fluid container-min-max-width mt-3 w-25'>
             <UserAddForm />
             <GoToPersonsList />
         </div>

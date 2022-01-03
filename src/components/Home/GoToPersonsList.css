@@ -1,0 +1,21 @@
+.list-of-persons-button{
+    text-align: center;
+}
+
+.list-of-persons-button button{
+	background-color: #25ac52;
+	color: white;
+	border: none;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+}
+
+.list-of-persons-button button:hover{
+    filter: brightness(130%);
+}
+
+.list-of-persons-button:active{
+	transform: scale(0.93);
+	/* to make it like its pressed */
+  }

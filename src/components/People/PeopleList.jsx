@@ -41,7 +41,6 @@ class PeopleList extends React.Component {
     }
 
     render() {
-        console.log("this props persons is ",this.props.persons)
 
         let filteredArray=[...this.props.persons];
 
@@ -73,7 +72,7 @@ class PeopleList extends React.Component {
         }
 
         return (
-            <div>
+            <div className='d-flex flex-row flex-wrap justify-content-center'>
                 {                  
                    filteredArray.map((person,index)=>{
                         return <PeopleItem 

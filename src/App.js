@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import People from './pages/People';
 import Page404 from './pages/Page404';
+import './utils/utility-classes.css';
 
 function App() {
   return (
